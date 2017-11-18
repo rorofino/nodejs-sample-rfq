@@ -1,0 +1,34 @@
+version: '3.1'
+
+services:
+
+  main-service:
+    build: ./main-service
+    container_name: main
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      MONGO_URL: mongodb://mongo-main-service/company-main
+      JWT_SECRET: y/B?E(H+KbPeShVmYq3t6w9z$C&F)J@NckLmOr4u7x!A%D*F-JaNdRgUkXp2s5v8
+    volumes:
+      - ./main-service/src:/src
+      - /src/node_modules
+    links:
+      - mongo-main-service
+    ports:
+      - 3000:3000
+    command: nodemon -L /src
+    depends_on:
+      - mongo-main-service
+
+  mongo-main-service:
+    image: mongo:3.4
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: 12345678
+    #command: mongod --auth
+
+volumes:
+  mongo-data:

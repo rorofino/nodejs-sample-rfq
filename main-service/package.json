@@ -1,0 +1,33 @@
+{
+  "name": "altomar-main-service",
+  "version": "0.0.1",
+  "description": "Service hold all Api, Users, Purchase Orders and RFQs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://rorofino@bitbucket.org/rorofino/altomar.git"
+  },
+  "keywords": [
+    "Altomar",
+    "main",
+    "PO",
+    "purchase",
+    "order",
+    "RFQ"
+  ],
+  "author": "Rodrigo Orofino",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/rorofino/altomar#readme",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "log4js": "^2.3.12",
+    "mongoose": "^4.13.0",
+    "node-restful": "^0.2.6"
+  }
+}
